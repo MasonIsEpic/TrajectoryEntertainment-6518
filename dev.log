@@ -15,3 +15,4 @@ Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
   ➜  press h + enter to show help
 1:46:46 AM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
 1:46:46 AM [vite] (client) hmr update /src/web/styles.css, /src/web/components/layout.tsx
+5:29:38 AM [vite] (client) page reload index.html

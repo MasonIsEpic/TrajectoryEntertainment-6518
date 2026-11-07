@@ -1,0 +1,69 @@
+$ turbo build
+• turbo 2.9.18
+
+   • Packages in scope: @template/desktop, @template/mobile, @template/web
+   • Running build in 3 packages
+   • Remote caching disabled
+
+@template/web:build: cache miss, executing c3a104f6d0b0d4ec
+@template/desktop:build: cache hit, replaying logs 6e28d12d091299dc
+@template/desktop:build: $ vite build
+@template/desktop:build: (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+@template/desktop:build:   - `__dirname` (vite.config.ts:9:24). Use `import.meta.dirname` instead
+@template/desktop:build: Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+@template/desktop:build: vite v8.3.6 building client environment for production...
+@template/desktop:build: transforming...
+@template/desktop:build: ✓ 2 modules transformed.
+@template/desktop:build: rendering chunks...
+@template/desktop:build: computing gzip size...
+@template/desktop:build: dist/assets/__no-renderer-2eeSWERL.js  0.05 kB │ gzip: 0.07 kB
+@template/desktop:build: 
+@template/desktop:build: ✓ built in 26ms
+@template/desktop:build: vite v8.3.6 building client environment for production...
+@template/desktop:build: transforming...
+@template/desktop:build: ✓ 4 modules transformed.
+@template/desktop:build: rendering chunks...
+@template/desktop:build: computing gzip size...
+@template/desktop:build: dist-electron/main.js  4.46 kB │ gzip: 2.13 kB
+@template/desktop:build: 
+@template/desktop:build: ✓ built in 25ms
+@template/desktop:build: vite v8.3.6 building client environment for production...
+@template/desktop:build: 
+@template/desktop:build:  WARN  inlineDynamicImports option is deprecated, please use codeSplitting: false instead.
+@template/desktop:build: 
+@template/desktop:build: transforming...
+@template/desktop:build: ✓ 3 modules transformed.
+@template/desktop:build: rendering chunks...
+@template/desktop:build: computing gzip size...
+@template/desktop:build: dist-electron/preload.mjs  1.03 kB │ gzip: 0.42 kB
+@template/desktop:build: 
+@template/desktop:build: ✓ built in 190ms
+@template/web:build: $ tsc --noEmit && vite build
+@template/web:build: (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+@template/web:build:   - `__dirname` (vite.config.ts:10:27). Use `import.meta.dirname` instead
+@template/web:build:   - import "./vite/__plugins/runable-analytics-plugin" without a file extension (vite.config.ts:5:36). Add the file extension
+@template/web:build:   - import "./vite/__plugins/hono-dev-plugin" without a file extension (vite.config.ts:6:27). Add the file extension
+@template/web:build:   - import "./vite/__plugins/asset-optimizer-plugin" without a file extension (vite.config.ts:7:34). Add the file extension
+@template/web:build: Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+@template/web:build: vite v8.3.6 building client environment for production...
+@template/web:build: (node:6136) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+@template/web:build: (Use `node --trace-deprecation ...` to show where the warning was created)
+@template/web:build: transforming...
+@template/web:build: ✓ 1826 modules transformed.
+@template/web:build: rendering chunks...
+@template/web:build: computing gzip size...
+@template/web:build: dist/index.html                   1.03 kB │ gzip:   0.57 kB
+@template/web:build: dist/assets/index-DqPRukIb.css   32.16 kB │ gzip:   7.76 kB
+@template/web:build: dist/assets/index-BcUZ8eaG.js   522.40 kB │ gzip: 155.29 kB
+@template/web:build: 
+@template/web:build: [plugin builtin:vite-reporter] 
+@template/web:build: (!) Some chunks are larger than 500 kB after minification. Consider:
+@template/web:build: - Using dynamic import() to code-split the application
+@template/web:build: - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+@template/web:build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+@template/web:build: ✓ built in 624ms
+
+ Tasks:    2 successful, 2 total
+Cached:    1 cached, 2 total
+  Time:    1.692s 
+
