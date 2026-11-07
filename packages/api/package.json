@@ -2,9 +2,7 @@
   "name": "@template/api",
   "private": true,
   "type": "module",
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
+  "scripts": {},
   "dependencies": {
     "@libsql/client": "^0.17.2",
     "@orpc/server": "^1.14.7",

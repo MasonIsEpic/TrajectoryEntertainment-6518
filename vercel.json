@@ -14,7 +14,8 @@
       ]
     },
     "api": {
-      "root": "packages/api"
+      "root": "packages/api",
+      "framework": "hono"
     }
   },
   "rewrites": [
