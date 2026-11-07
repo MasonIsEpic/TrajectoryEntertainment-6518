@@ -7,15 +7,24 @@
     },
     "web": {
       "root": "packages/web",
-      "framework": "vite"
+      "framework": "vite",
+      "routes": [
+        { "handle": "filesystem" },
+        { "src": "/(.*)", "dest": "/index.html" }
+      ]
+    },
+    "api": {
+      "root": "packages/api"
     }
   },
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": { "service": "api" }
+    },
+    {
       "source": "/(.*)",
-      "destination": {
-        "service": "web"
-      }
+      "destination": { "service": "web" }
     }
   ]
 }
