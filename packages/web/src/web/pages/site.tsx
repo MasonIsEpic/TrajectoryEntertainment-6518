@@ -17,7 +17,7 @@ function Meta({ title }: { title: string }) {
   useEffect(() => {
     document.title =
       title === "Home"
-        ? "Trajectory Entertainment | Production with intention."
+        ? "Trajectory Entertainment"
         : `${title} | Trajectory Entertainment`;
   }, [title]);
   return null;
@@ -51,10 +51,6 @@ export function Home() {
       <section className="hero">
         <div className="hero-image" />
         <div className="orbit orbit-one" />
-        <div className="hero-topline">
-          <Eyebrow>PRODUCTION WITH INTENTION</Eyebrow>
-          <span>32.7157° N &nbsp; 117.1611° W</span>
-        </div>
         <div className="hero-content">
           <h1>
             NOTHING
@@ -82,11 +78,6 @@ export function Home() {
             SCROLL TO EXPLORE <ArrowDown size={14} />
           </a>
         </div>
-        <div className="hero-annotation">
-          <span>LIVE / PRODUCED / CONNECTED</span>
-          <span className="crosshair">+</span>
-          <span>EXECUTION IS EVERYTHING.</span>
-        </div>
       </section>
       <div className="capability-strip">
         <span>LIVE PRODUCTION</span>
@@ -96,7 +87,6 @@ export function Home() {
         <span>AVL INSTALLATIONS</span>
         <i>✦</i>
         <span>IT & UNIFI SYSTEMS</span>
-        <i>✦</i>
       </div>
       <section className="section services-home" id="capabilities">
         <div className="section-heading">
@@ -125,7 +115,6 @@ export function Home() {
             return (
               <Link href={"/services#" + s.id} className="service-card" key={s.id}>
                 <div className="service-card-top">
-                  <span>{s.number} /</span>
                   <Icon size={25} strokeWidth={1.3} />
                 </div>
                 <h3>{s.short}</h3>
@@ -197,9 +186,6 @@ export function Home() {
             <ProjectCard project={p} key={p.slug} />
           ))}
         </div>
-        <p className="sample-note">
-          Sample projects shown for illustration. Not actual client work.
-        </p>
       </section>
       <ContactBand />
     </>
@@ -210,7 +196,6 @@ export function About() {
     <>
       <Meta title="About" />
       <section className="page-intro section">
-        <Eyebrow>ABOUT / TRAJECTORY ENTERTAINMENT</Eyebrow>
         <h1>
           THE CALCULATED
           <br />
@@ -229,7 +214,6 @@ export function About() {
         <span>THE PEOPLE BEHIND THE SIGNAL.</span>
       </section>
       <section className="section story-full">
-        <Eyebrow>01 / OUR STORY</Eyebrow>
         <div>
           <h2>
             NOTHING LEFT
@@ -253,7 +237,6 @@ export function About() {
         </div>
       </section>
       <section className="section process">
-        <Eyebrow>02 / HOW WE THINK</Eyebrow>
         <h2>
           AMBITION MEETS <span>A PLAN.</span>
         </h2>
@@ -303,7 +286,6 @@ export function Services() {
     <>
       <Meta title="Services" />
       <section className="page-intro section">
-        <Eyebrow>SERVICES / END-TO-END CAPABILITY</Eyebrow>
         <h1>
           THE VISION.
           <br />
@@ -332,9 +314,6 @@ export function Services() {
       {services.map((s) => (
         <section id={s.id} className="section service-detail" key={s.id}>
           <div>
-            <Eyebrow>
-              {s.number} / {s.tag}
-            </Eyebrow>
             <h2>{s.title}</h2>
             <p>{s.description}</p>
             <ul>
@@ -358,7 +337,7 @@ export function Services() {
           </div>
           <div className="service-detail-image">
             <img src={s.image} alt={"Illustrative imagery for " + s.title} loading="lazy" />
-            <span>{s.number} / TRAJECTORY ENTERTAINMENT</span>
+            <span></span>
           </div>
         </section>
       ))}
@@ -380,7 +359,6 @@ export function Work() {
     <>
       <Meta title="Work" />
       <section className="page-intro section">
-        <Eyebrow>WORK / PROJECTS & POSSIBILITIES</Eyebrow>
         <h1>
           INTENTION.
           <br />
@@ -392,7 +370,7 @@ export function Work() {
             <br />
             Here’s a look at what yours could be.
           </p>
-          <span>CONCEPT STUDIES / 01–03</span>
+          <span></span>
         </div>
       </section>
       <section className="section work-list">
@@ -445,7 +423,7 @@ export function CaseStudy() {
         <Link href="/work" className="text-link">
           <ArrowLeft size={16} /> BACK TO WORK
         </Link>
-        <Eyebrow>{project.type} / SAMPLE PROJECT</Eyebrow>
+        <Eyebrow>{project.type}</Eyebrow>
         <h1>{project.title}</h1>
         <div className="case-facts">
           <div>
@@ -464,7 +442,7 @@ export function CaseStudy() {
       </section>
       <div className="case-cover">
         <img src={project.image} alt={"Illustrative " + project.category + " photography"} />
-        <span>CONCEPT STUDY · NOT ACTUAL CLIENT WORK</span>
+        <span></span>
       </div>
       <section className="section case-body">
         <aside>
@@ -476,17 +454,17 @@ export function CaseStudy() {
         </aside>
         <div>
           <article>
-            <span className="eyebrow">01 / THE BRIEF</span>
+            <span className="eyebrow">THE BRIEF</span>
             <h2>A CLEAR STARTING POINT.</h2>
             <p>{project.brief}</p>
           </article>
           <article>
-            <span className="eyebrow">02 / THE APPROACH</span>
+            <span className="eyebrow">THE APPROACH</span>
             <h2>PLAN. ALIGN. EXECUTE.</h2>
             <p>{project.approach}</p>
           </article>
           <article>
-            <span className="eyebrow">03 / PROPOSED DELIVERABLES</span>
+            <span className="eyebrow">PROPOSED DELIVERABLES</span>
             <ul>
               {project.deliverables.map((x) => (
                 <li key={x}>
@@ -497,7 +475,7 @@ export function CaseStudy() {
             </ul>
           </article>
           <article>
-            <span className="eyebrow">04 / THE INTENDED OUTCOME</span>
+            <span className="eyebrow">THE INTENDED OUTCOME</span>
             <p className="large-copy">{project.outcome}</p>
           </article>
         </div>
@@ -527,7 +505,6 @@ export function Contact() {
     <>
       <Meta title="Contact" />
       <section className="section contact-intro">
-        <Eyebrow>CONTACT / YOUR NEXT MOVE</Eyebrow>
         <h1>
           GREAT WORK
           <br />
@@ -538,14 +515,13 @@ export function Contact() {
       </section>
       <section className="section contact-layout">
         <aside>
-          <Eyebrow>OPEN A LINE</Eyebrow>
           <h2>
             LET’S MAKE
             <br />
             <span>A PLAN.</span>
           </h2>
           <p>
-            Tell us what you’re thinking. A live event, a new story, a better system — or something
+            Tell us what you’re thinking. A live event, a new story, a better system, or something
             that brings them all together.
           </p>
           <div className="contact-info">
@@ -621,7 +597,7 @@ export function Contact() {
             >
               <div className="form-heading">
                 <span>PROJECT INQUIRY</span>
-                <span>01 / START HERE</span>
+                <span></span>
               </div>
               <div className="form-row">
                 <label>
@@ -694,7 +670,7 @@ export function Contact() {
                 <textarea
                   name="message"
                   aria-label="Tell us about your project"
-                  placeholder="The vision, the timeline, the details. Where do you want to go?"
+                  placeholder="The vision, the timeline, the details, the budget. Where do you want to go?"
                   rows={5}
                   required
                   minLength={10}
