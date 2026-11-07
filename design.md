@@ -1,0 +1,6 @@
+# Trajectory Entertainment — Design
+Black cinematic editorial website with disciplined mission-control details. Orange #ff6a24, yellow #dfdb86, warm white #f3f2e9, charcoal #111210. Barlow Condensed bold display, Manrope body, IBM Plex Mono labels; self-hosted. Asymmetric wide sections, 64px desktop gutters, 22px mobile, fine rules, square shapes, sparse numeric details and subtle orbital geometry. Atmospheric production photography is illustrative, not evidence of past work.
+
+Home, About, Services, Work, Contact, plus data-driven /work/:slug case studies. Shared responsive header/footer, work category filters, service anchors, accessible mobile menu. Database-backed contact form with validation/pending/error/success states. Drizzle inquiries table, typed oRPC create procedure, no public read access. Samples explicitly labeled. Content definitions live in src/web/lib/content.ts; presentation in pages/site.tsx, styles.css. No external CMS or admin login included.
+
+Refinement: remove redundant homepage section eyebrows (capabilities, mindset, work), shared contact-band eyebrow, and project-image overlay badges. Keep below-image project metadata and honest sample disclosures. Favor uninterrupted content over unnecessary labels.

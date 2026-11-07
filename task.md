@@ -1,0 +1,11 @@
+# Task
+- Approved custom cinematic editorial direction, black/orange/yellow, mission control accents.
+- Build five pages + sample case studies, responsive UX, database-backed contact.
+- Public email mason@trajectoryentertainment.com, phone (858) 304-2781.
+- Assets: illustrative Unsplash photography. All samples labeled.
+- Next: implement, push schema, build/typecheck, browser-test navigation/filter/form/mobile, deliver.
+- Completed all pages, 3 clearly disclosed samples, dynamic case-study routes, work filters and service anchors.
+- Database schema applied; form submitted in browser, saved record verified directly, QA record removed.
+- Chrome verified mobile navigation, all routes, filters, service preselection; no JS errors or mobile overflow.
+- Production build and lint passed. Web server running in tmux on assigned port 4200.
+- CONTENT-GUIDE.md documents adding case studies and database-only inquiries (no email notifications/admin CMS).
