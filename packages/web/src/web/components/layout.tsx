@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { SocialLinks } from "./social-links";
 export function Brand() {
   return (
     <span className="brand">
-      <svg viewBox="0 0 42 42" aria-hidden="true">
-        <path d="M5 32L32 5 22 34 18 23 5 32Z" fill="currentColor" />
-        <path d="M5 38L14 29M31 18L38 11" stroke="currentColor" strokeWidth="2" />
-      </svg>
-      <span>
-        TRAJECTORY<small>ENTERTAINMENT</small>
-      </span>
+      <img src="/images/trajectory-logo.png" alt="Trajectory Entertainment" />
     </span>
   );
 }
@@ -76,6 +71,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <a href="tel:+18583042781">(858) 304-2781</a>
           </div>
         </div>
+        <div className="footer-social-row">
+          <SocialLinks />
+          <Link href="/admin" className="admin-access">
+            CMS LOGIN <ArrowUpRight size={12} />
+          </Link>
+        </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Trajectory Entertainment</span>
           <span>SAN DIEGO, CA · BUILT WITH INTENTION</span>
@@ -129,7 +130,6 @@ export function ContactBand() {
         </p>
         <Button>START A PROJECT</Button>
       </div>
-      <span className="band-cross">+</span>
     </section>
   );
 }
