@@ -16,3 +16,92 @@ Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
 1:46:46 AM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
 1:46:46 AM [vite] (client) hmr update /src/web/styles.css, /src/web/components/layout.tsx
 5:29:38 AM [vite] (client) page reload index.html
+10:38:55 PM [vite] (client) hmr update /src/web/styles.css
+10:38:55 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
+10:38:55 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/layout.tsx
+10:38:56 PM [vite] (client) hmr update /src/web/styles.css
+10:54:37 PM [vite] ../../.env changed, restarting server...
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vite.config.ts:10:27). Use `import.meta.dirname` instead
+  - import "./vite/__plugins/runable-analytics-plugin" without a file extension (vite.config.ts:5:36). Add the file extension
+  - import "./vite/__plugins/hono-dev-plugin" without a file extension (vite.config.ts:6:27). Add the file extension
+  - import "./vite/__plugins/asset-optimizer-plugin" without a file extension (vite.config.ts:7:34). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+Port 4200 is in use on a wildcard address, but localhost:4200 is available. There may be another server running on a wildcard IP on port 4200.
+10:54:39 PM [vite] server restarted.
+10:57:24 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
+10:57:24 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/layout.tsx
+10:57:24 PM [vite] (client) page reload index.html
+10:57:25 PM [vite] (client) [optimizer] bundling dependencies...
+10:57:27 PM [vite] (client) dependencies optimized: better-auth/react, react-icons/fa6
+10:57:27 PM [vite] (client) optimized dependencies changed. reloading
+11:11:35 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
+11:12:54 PM [vite] (client) hmr update /src/web/app.tsx, /src/web/styles.css
+11:14:05 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/auth.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/routes/upload.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/middleware/admin.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx, /src/web/pages/admin-inbox.tsx, /src/web/pages/admin-projects.tsx, /src/web/pages/admin-editor.tsx, /src/web/pages/admin-preview.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/routes/inbox.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/lib/s3.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx, /src/web/pages/admin-inbox.tsx, /src/web/pages/admin-projects.tsx, /src/web/pages/admin-editor.tsx, /src/web/pages/admin-preview.tsx, /src/web/components/admin-gate.tsx, /src/web/components/admin-layout.tsx, /src/web/pages/admin-sign-in.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/app.tsx, /src/web/styles.css
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx, /src/web/pages/admin-inbox.tsx, /src/web/pages/admin-projects.tsx, /src/web/pages/admin-editor.tsx, /src/web/pages/admin-preview.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/database/schema.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:06 PM [vite] (ssr) page reload src/api/routes/case-studies.ts
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-projects.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-editor.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-preview.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-inbox.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-sign-in.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/admin-gate.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/admin-layout.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/layout.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/components/project-story.tsx, /src/web/styles.css
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/social-links.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css, /src/web/components/founder.tsx
+11:14:06 PM [vite] (client) hmr update /src/web/styles.css
+11:14:21 PM [vite] (client) hmr update /src/web/styles.css
+11:14:21 PM [vite] (ssr) page reload src/api/index.ts
+11:14:21 PM [vite] (client) hmr update /src/web/styles.css
+11:14:21 PM [vite] (ssr) page reload src/api/routes/case-studies.ts
+11:14:33 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/site.tsx
+11:14:33 PM [vite] (client) hmr update /src/web/components/project-story.tsx, /src/web/styles.css
+11:14:33 PM [vite] (client) hmr update /src/web/styles.css, /src/web/pages/admin-editor.tsx
+[2m2026-11-08T23:25:10.831Z[0m [31mERROR[0m [1m[Better Auth]:[0m Invalid origin: https://4200-iw1h374myuuluscjz831f.e2b.app
+[2m2026-11-08T23:25:33.821Z[0m [31mERROR[0m [1m[Better Auth]:[0m Invalid origin: https://4200-iw1h374myuuluscjz831f.e2b.app
+DrizzleQueryError: Failed query: select "id", "key", "count", "last_request" from "rate_limit" where "rate_limit"."key" = ? limit ?
+params: 127.0.0.1|/get-session,100
+    at LibSQLPreparedQuery.queryWithCache (file:///home/user/trajectory/node_modules/.bun/drizzle-orm@0.45.2+0c43aa37f8dc27ba/node_modules/drizzle-orm/sqlite-core/session.js:43:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async LibSQLPreparedQuery.values (file:///home/user/trajectory/node_modules/.bun/drizzle-orm@0.45.2+0c43aa37f8dc27ba/node_modules/drizzle-orm/libsql/session.js:193:12)
+    at async LibSQLPreparedQuery.all (file:///home/user/trajectory/node_modules/.bun/drizzle-orm@0.45.2+0c43aa37f8dc27ba/node_modules/drizzle-orm/libsql/session.js:136:18)
+    at async Object.findMany (file:///home/user/trajectory/node_modules/.bun/@better-auth+drizzle-adapter@1.6.19+3b09f80d5ec58a7f/node_modules/@better-auth/drizzle-adapter/dist/index.mjs:449:12)
+    at async Object.findMany (file:///home/user/trajectory/node_modules/.bun/@better-auth+core@1.6.19+a63c988fce181250/node_modules/@better-auth/core/dist/db/adapter/factory.mjs:606:16)
+    at async readRow (file:///home/user/trajectory/node_modules/.bun/better-auth@1.6.19+87c864f9dd26bc57/node_modules/better-auth/dist/api/rate-limiter/index.mjs:81:17)
+    at async Object.consume (file:///home/user/trajectory/node_modules/.bun/better-auth@1.6.19+87c864f9dd26bc57/node_modules/better-auth/dist/api/rate-limiter/index.mjs:93:16)
+    at async onRequestRateLimit (file:///home/user/trajectory/node_modules/.bun/better-auth@1.6.19+87c864f9dd26bc57/node_modules/better-auth/dist/api/rate-limiter/index.mjs:344:35)
+    at async Object.onRequest (file:///home/user/trajectory/node_modules/.bun/better-auth@1.6.19+87c864f9dd26bc57/node_modules/better-auth/dist/api/index.mjs:176:30) {
+  query: 'select "id", "key", "count", "last_request" from "rate_limit" where "rate_limit"."key" = ? limit ?',
+  params: [ '127.0.0.1|/get-session', 100 ],
+  cause: FetchError: request to https://8677b903-efd6-4c60-9ddb-890093cfca5e-runable.aws-us-east-2.turso.io/v2/pipeline failed, reason: socket hang up
+      at ClientRequest.<anonymous> (/home/user/trajectory/node_modules/.bun/node-fetch@2.7.0/node_modules/node-fetch/lib/index.js:1501:11)
+      at ClientRequest.emit (node:events:514:20)
+      at emitErrorEvent (node:_http_client:115:11)
+      at TLSSocket.socketOnEnd (node:_http_client:821:5)
+      at TLSSocket.emit (node:events:526:24)
+      at endReadableNT (node:internal/streams/readable:2147:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    type: 'system',
+    errno: 'ECONNRESET',
+    code: 'ECONNRESET'
+  }
+}

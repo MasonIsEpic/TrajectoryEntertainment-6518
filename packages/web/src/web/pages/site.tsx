@@ -3,15 +3,17 @@ import { Link, useParams } from "wouter";
 import {
   ArrowDown,
   ArrowUpRight,
-  ArrowLeft,
   Check,
   Radio,
   Film,
   SlidersHorizontal,
   Network,
 } from "lucide-react";
-import { Button, ContactBand, Eyebrow } from "../components/layout";
-import { services, projects } from "../lib/content";
+import { Button, ContactBand } from "../components/layout";
+import { services } from "../lib/content";
+import { usePublicProjects, useCaseStudy, type Project } from "../queries/cms";
+import { Founder } from "../components/founder";
+import { ProjectStory } from "../components/project-story";
 import { useSubmitInquiry } from "../queries/inquiries";
 function Meta({ title }: { title: string }) {
   useEffect(() => {
@@ -23,28 +25,26 @@ function Meta({ title }: { title: string }) {
   return null;
 }
 const icons = [Radio, Film, SlidersHorizontal, Network];
-function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={"/work/" + project.slug} className="project-card">
       <div className="project-image">
-        <img
-          src={project.image}
-          alt={project.category + " illustrative production photography"}
-          loading="lazy"
-        />
+        <img src={project.image} alt={project.imageAlt || project.title} loading="lazy" />
         <span className="project-arrow">
           <ArrowUpRight />
         </span>
       </div>
       <div className="project-meta">
         <span>{project.type}</span>
-        <span>CONCEPT STUDY</span>
+        <span>{project.sample ? "CONCEPT STUDY" : project.kind.toUpperCase()}</span>
       </div>
       <h3>{project.title}</h3>
     </Link>
   );
 }
 export function Home() {
+  const work = usePublicProjects();
+  const featured = (work.data || []).filter((p) => p.featured).slice(0, 2);
   return (
     <>
       <Meta title="Home" />
@@ -131,15 +131,7 @@ export function Home() {
       <section className="story-home section">
         <div className="story-mark">
           <div className="orbit" />
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <path
-              d="M38 147L164 30 121 174 104 109Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-            />
-            <path d="M38 174L84 126" stroke="currentColor" strokeWidth="1.2" />
-          </svg>
+          <img src="/images/trajectory-mark.png" alt="Trajectory directional mark" />
           <span>THE CALCULATED PATH.</span>
         </div>
         <div>
@@ -172,20 +164,30 @@ export function Home() {
           </div>
           <div>
             <p>
-              A look at what’s possible.
+              Live experiences. Purpose-built systems.
               <br />
-              Illustrative concepts. Real-world possibilities.
+              Stories that move people.
             </p>
             <Link href="/work" className="text-link">
               EXPLORE THE WORK <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>
-        <div className="project-grid">
-          {projects.slice(0, 2).map((p) => (
-            <ProjectCard project={p} key={p.slug} />
-          ))}
-        </div>
+        {work.isLoading ? (
+          <p className="data-state">Loading featured work…</p>
+        ) : work.isError ? (
+          <p className="data-state" role="alert">
+            Work could not be loaded. <button onClick={() => work.refetch()}>Try again</button>
+          </p>
+        ) : featured.length ? (
+          <div className="project-grid">
+            {featured.map((p) => (
+              <ProjectCard project={p} key={p.slug} />
+            ))}
+          </div>
+        ) : (
+          <p className="data-state">New project stories are on the way.</p>
+        )}
       </section>
       <ContactBand />
     </>
@@ -236,6 +238,7 @@ export function About() {
           </p>
         </div>
       </section>
+      <Founder />
       <section className="section process">
         <h2>
           AMBITION MEETS <span>A PLAN.</span>
@@ -347,6 +350,8 @@ export function Services() {
 }
 export function Work() {
   const [filter, setFilter] = useState("All work");
+  const work = usePublicProjects();
+  const projects = work.data || [];
   const categories = [
     "All work",
     "Live events",
@@ -368,7 +373,7 @@ export function Work() {
           <p>
             Every project has a path.
             <br />
-            Here’s a look at what yours could be.
+            Explore the stories behind the work.
           </p>
           <span></span>
         </div>
@@ -386,14 +391,22 @@ export function Work() {
             </button>
           ))}
         </div>
-        <div className="sample-banner">
-          <span className="signal" />
-          <p>
-            These are sample case studies, not completed client projects. Real project stories will
-            live here as the portfolio grows.
+        {projects.length > 0 && projects.every((p) => p.sample) && (
+          <div className="sample-banner">
+            <span className="signal" />
+            <p>
+              These are sample case studies, not completed client projects. Real project stories
+              will live here as the portfolio grows.
+            </p>
+          </div>
+        )}
+        {work.isLoading ? (
+          <p className="data-state">Loading project stories…</p>
+        ) : work.isError ? (
+          <p className="data-state" role="alert">
+            Projects could not be loaded. <button onClick={() => work.refetch()}>Try again</button>
           </p>
-        </div>
-        {visible.length ? (
+        ) : visible.length ? (
           <div className="project-grid">
             {visible.map((p) => (
               <ProjectCard key={p.slug} project={p} />
@@ -402,8 +415,8 @@ export function Work() {
         ) : (
           <div className="empty-work">
             <Network size={36} />
-            <h3>THE NEXT CONNECTION.</h3>
-            <p>No case studies in this category yet. Have a network or IT project in mind?</p>
+            <h3>THE NEXT CHAPTER.</h3>
+            <p>No case studies in this category yet. Have a project in mind?</p>
             <Button>LET’S MAKE A PLAN</Button>
           </div>
         )}
@@ -414,85 +427,21 @@ export function Work() {
 }
 export function CaseStudy() {
   const { slug } = useParams<{ slug: string }>();
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return <NotFound />;
+  const study = useCaseStudy(slug || "");
+  const work = usePublicProjects();
+  if (study.isLoading)
+    return <section className="section data-state">Loading project story…</section>;
+  if (study.isError)
+    return (
+      <section className="section data-state" role="alert">
+        This project could not be loaded. <button onClick={() => study.refetch()}>Try again</button>
+      </section>
+    );
+  if (!study.data) return <NotFound />;
   return (
     <>
-      <Meta title={project.title} />
-      <section className="section case-intro">
-        <Link href="/work" className="text-link">
-          <ArrowLeft size={16} /> BACK TO WORK
-        </Link>
-        <Eyebrow>{project.type}</Eyebrow>
-        <h1>{project.title}</h1>
-        <div className="case-facts">
-          <div>
-            <span>PROJECT</span>
-            <p>{project.client}</p>
-          </div>
-          <div>
-            <span>CAPABILITY</span>
-            <p>{project.category}</p>
-          </div>
-          <div>
-            <span>STATUS</span>
-            <p>Illustrative concept</p>
-          </div>
-        </div>
-      </section>
-      <div className="case-cover">
-        <img src={project.image} alt={"Illustrative " + project.category + " photography"} />
-        <span></span>
-      </div>
-      <section className="section case-body">
-        <aside>
-          <Eyebrow>THE PROJECT PATH</Eyebrow>
-          <p>
-            This sample demonstrates the structure of a dedicated project page. It does not
-            represent a completed engagement or verified results.
-          </p>
-        </aside>
-        <div>
-          <article>
-            <span className="eyebrow">THE BRIEF</span>
-            <h2>A CLEAR STARTING POINT.</h2>
-            <p>{project.brief}</p>
-          </article>
-          <article>
-            <span className="eyebrow">THE APPROACH</span>
-            <h2>PLAN. ALIGN. EXECUTE.</h2>
-            <p>{project.approach}</p>
-          </article>
-          <article>
-            <span className="eyebrow">PROPOSED DELIVERABLES</span>
-            <ul>
-              {project.deliverables.map((x) => (
-                <li key={x}>
-                  <Check size={16} />
-                  {x}
-                </li>
-              ))}
-            </ul>
-          </article>
-          <article>
-            <span className="eyebrow">THE INTENDED OUTCOME</span>
-            <p className="large-copy">{project.outcome}</p>
-          </article>
-        </div>
-      </section>
-      <section className="section next-project">
-        <Eyebrow>CONTINUE EXPLORING</Eyebrow>
-        {projects
-          .filter((p) => p.slug !== slug)
-          .slice(0, 1)
-          .map((p) => (
-            <Link key={p.slug} href={"/work/" + p.slug}>
-              <h2>{p.title}</h2>
-              <ArrowUpRight size={40} />
-            </Link>
-          ))}
-      </section>
-      <ContactBand />
+      <Meta title={study.data.title} />
+      <ProjectStory project={study.data} next={(work.data || []).find((p) => p.slug !== slug)} />
     </>
   );
 }
@@ -551,7 +500,6 @@ export function Contact() {
               <span className="success-icon">
                 <Check size={32} />
               </span>
-              <Eyebrow>MESSAGE RECEIVED</Eyebrow>
               <h2>
                 YOUR NEXT MOVE
                 <br />
@@ -712,7 +660,6 @@ export function NotFound() {
   return (
     <section className="section not-found">
       <Meta title="Page not found" />
-      <Eyebrow>404 / OFF THE FLIGHT PATH</Eyebrow>
       <h1>
         LET’S GET YOU
         <br />

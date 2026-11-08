@@ -2,6 +2,10 @@ import type { RouterClient } from "@orpc/server";
 import { createApp } from "./__core/app";
 import { ping } from "./routes/ping";
 import { inquiries } from "./routes/inquiries";
+import { caseStudy } from "./routes/case-study";
+import { inbox } from "./routes/inbox";
+import { upload } from "./routes/upload";
+import { auth } from "./auth";
 
 // API features are oRPC procedures, one file per feature in ./routes/,
 // composed into this router — typed end-to-end via the clients
@@ -12,6 +16,9 @@ import { inquiries } from "./routes/inquiries";
 export const router = {
   ping,
   inquiries,
+  caseStudy,
+  inbox,
+  upload,
 };
 
 export type AppRouter = typeof router;
@@ -19,6 +26,7 @@ export type AppRouter = typeof router;
 export type AppRouterClient = RouterClient<AppRouter>;
 
 const app = createApp(router);
+app.on(["GET", "POST"], "/api/auth/*", (c) => auth.handler(c.req.raw));
 // Rare plain-HTTP endpoints (webhooks, streaming, the Better Auth handler)
 // register here with full paths, e.g. app.post("/api/webhooks/example", ...)
 
