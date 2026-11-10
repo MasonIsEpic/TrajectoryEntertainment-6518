@@ -173,7 +173,7 @@ img {
   min-height: 52px;
 }
 .button:hover {
-  background: #ff854c;
+  background: #ffba41;
   transform: translateY(-2px);
 }
 .button.secondary {
@@ -300,7 +300,7 @@ img {
   background:
     linear-gradient(90deg, #090a09 0%, rgba(9, 10, 9, 0.45) 33%, rgba(9, 10, 9, 0.12) 80%),
     linear-gradient(0deg, #090a09, transparent 40%, rgba(9, 10, 9, 0.1)),
-    url("/images/live.jpg") center center/cover;
+    url("/images/hero.jpg") center center/cover;
   opacity: 0.8;
 }
 .hero:after {
@@ -605,7 +605,7 @@ img {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: #13150e;
+  background: #0b1220;
 }
 .contact-band h2 {
   font-size: clamp(60px, 6.7vw, 95px);
