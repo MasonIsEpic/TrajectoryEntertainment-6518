@@ -101,7 +101,7 @@ export function Home() {
             <p>
               One production partner. Every part of the picture.
               <br />
-              From the signal path to the final cut, we connect
+              From the initial concept to the final cut, we connect
               <br className="desktop-break" /> the creative and the technical.
             </p>
             <Link href="/services" className="text-link">
@@ -141,8 +141,8 @@ export function Home() {
             <span>TECHNICAL DISCIPLINE.</span>
           </h2>
           <p>
-            Trajectory is the calculated path. We plan the route, control the variables, and execute
-            — whether the work is live, produced, or entertainment-driven.
+            Trajectory is the calculated path. We plan the route, control the variables, and execute,
+            whether the work is live, produced, or entertainment-driven.
           </p>
           <p>
             Based in San Diego, we bring the same intentionality to every live production, polished
@@ -223,8 +223,8 @@ export function About() {
             <span>TO CHANCE.</span>
           </h2>
           <p className="large-copy">
-            Trajectory is the calculated path. We plan the route, control the variables, and execute
-            — whether the work is live, produced, or entertainment-driven.
+            Trajectory is the calculated path. We plan the route, control the variables, and execute, 
+            whether the work is live, produced, or entertainment-driven.
           </p>
           <p>
             Trajectory Entertainment delivers live production, livestreams, broadcasts,
@@ -302,7 +302,7 @@ export function Services() {
             <br />
             One partner for every part of the picture.
           </p>
-          <span>CREATIVE + TECHNICAL</span>
+          <span></span>
         </div>
       </section>
       <div className="service-tabs">

@@ -9,7 +9,7 @@ export function Founder() {
           alt="Mason Power, Founder and Lead Producer of Trajectory Entertainment"
           loading="lazy"
         />
-        <span>MASON POWER / SAN DIEGO, CA</span>
+        <span></span>
       </div>
       <div className="founder-story">
         <h2>
@@ -23,7 +23,7 @@ export function Founder() {
         </p>
         <p>
           I’m also a public speaker working toward more hands-on learning for students, and the
-          founder of Trajectory Entertainment — a media production company creating events and
+          founder of Trajectory Entertainment, a media production company creating events and
           experiences.
         </p>
         <a className="founder-email" href="mailto:mason@trajectoryentertainment.com">

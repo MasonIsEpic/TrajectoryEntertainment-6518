@@ -77,8 +77,7 @@ export default function AdminSignIn() {
           )}
         </form>
         <p className="login-help">
-          Owner account only. Use the password you set securely in this chat. Password recovery can
-          be handled here through a secure reset request.
+          Authorized access only. Password recovery can be handled through a secure reset request. © 2026 Trajectory Entertainment
         </p>
         <Link className="text-link" href="/">
           <ArrowLeft size={15} />

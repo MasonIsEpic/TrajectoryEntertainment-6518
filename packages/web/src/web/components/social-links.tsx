@@ -19,7 +19,7 @@ export function SocialLinks({ personal = false }: { personal?: boolean }) {
           href: "https://www.linkedin.com/in/mason-power/",
           icon: FaLinkedinIn,
         },
-        { label: "Mason’s personal website", href: "https://masonmpower.com", icon: Globe },
+        { label: "Mason’s Personal Website", href: "https://masonmpower.com", icon: Globe },
       ]
     : [
         {

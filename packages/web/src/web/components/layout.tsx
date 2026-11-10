@@ -124,7 +124,7 @@ export function ContactBand() {
       </div>
       <div>
         <p>
-          Have a show, a story, or a system in mind?
+          Have a show, a story, a system, or an event in mind?
           <br />
           Let’s make a plan.
         </p>
