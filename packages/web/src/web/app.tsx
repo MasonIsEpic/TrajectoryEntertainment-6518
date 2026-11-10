@@ -56,7 +56,6 @@ function App() {
         </Route>
       </Switch>
       {import.meta.env.DEV && <AgentFeedback />}
-      <RunableBadge />
     </Provider>
   );
 }

@@ -12,7 +12,7 @@ export const services = [
       "Audio, lighting & show control",
       "Technical direction & event support",
     ],
-    image: "/images/broadcast.jpg",
+    image: "/images/Broadcast.jpg",
     tag: "IN THE MOMENT",
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     title: "Live. In full color.",
     category: "Live events",
     type: "Live production / Broadcast",
-    image: "/images/broadcast.jpg",
+    image: "/images/Broadcast.jpg",
     client: "Sample live event",
     brief:
       "A concept for a multi-camera live experience with coordinated audio, lighting, and broadcast delivery.",

@@ -212,7 +212,7 @@ export function About() {
         </div>
       </section>
       <section className="about-image">
-        <img src="/images/console.jpg" alt="Production technician working at an audio console" />
+        <img src="/images/team.jpg" alt="Production technician working at an audio console" />
         <span>THE PEOPLE BEHIND THE SIGNAL.</span>
       </section>
       <section className="section story-full">
